@@ -2,7 +2,8 @@ group = "com.parkking.native_google_place_picker"
 version = "1.0-SNAPSHOT"
 
 buildscript {
-    val kotlinVersion = "2.4.0"
+    val kotlinVersion = "2.1.0"
+
     repositories {
         google()
         mavenCentral()
@@ -39,6 +40,7 @@ android {
         getByName("main") {
             java.srcDirs("src/main/kotlin")
         }
+
         getByName("test") {
             java.srcDirs("src/test/kotlin")
         }
@@ -51,13 +53,20 @@ android {
     testOptions {
         unitTests {
             isIncludeAndroidResources = true
+
             all {
                 it.useJUnitPlatform()
 
                 it.outputs.upToDateWhen { false }
 
                 it.testLogging {
-                    events("passed", "skipped", "failed", "standardOut", "standardError")
+                    events(
+                        "passed",
+                        "skipped",
+                        "failed",
+                        "standardOut",
+                        "standardError"
+                    )
                     showStandardStreams = true
                 }
             }
@@ -66,7 +75,7 @@ android {
 }
 
 dependencies {
-implementation("com.google.android.libraries.places:places:5.3.0")
+    implementation("com.google.android.libraries.places:places:5.3.0")
 
     testImplementation("org.jetbrains.kotlin:kotlin-test")
     testImplementation("org.mockito:mockito-core:5.0.0")
