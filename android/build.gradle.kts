@@ -65,12 +65,6 @@ android {
     }
 }
 
-kotlin {
-    compilerOptions {
-        jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17
-    }
-}
-
 dependencies {
 implementation("com.google.android.libraries.places:places:5.3.0")
 
