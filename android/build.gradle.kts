@@ -75,7 +75,8 @@ android {
 }
 
 dependencies {
-    implementation("com.google.android.libraries.places:places:5.3.0")
+    implementation("com.google.android.libraries.places:places:4.3.1")
+    implementation("com.google.android.material:material:1.12.0")
 
     testImplementation("org.jetbrains.kotlin:kotlin-test")
     testImplementation("org.mockito:mockito-core:5.0.0")
